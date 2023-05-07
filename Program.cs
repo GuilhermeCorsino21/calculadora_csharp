@@ -8,7 +8,8 @@ static void Menu()
     Console.WriteLine("2 - Subtração");
     Console.WriteLine("3 - Divisão");
     Console.WriteLine("4 - Multiplicação");
-    Console.WriteLine("5 - Sair");
+    Console.WriteLine("5 - Fatorial");
+    Console.WriteLine("6 - Sair");
 
     Console.WriteLine("-----------------");
     Console.WriteLine("Selecione uma opção: ");
@@ -20,7 +21,8 @@ static void Menu()
         case 2: Subtracao(); break;
         case 3: Divisao(); break;
         case 4: Multiplicacao(); break;
-        case 5: System.Environment.Exit(0); break;
+        case 5: Fatorial(); break;
+        case 6: System.Environment.Exit(0); break;
         default: Menu(); break;
     }
 
@@ -84,7 +86,6 @@ static void Divisao()
     Menu();
 
 }
-
 static void Multiplicacao()
 {
     Console.Clear();
@@ -102,5 +103,29 @@ static void Multiplicacao()
     Console.ReadKey();
     Menu();
 
+}
+
+static void Fatorial()
+{
+    Console.Clear();
+
+    float i, fatorial;
+    Console.WriteLine("Digite o valor o número que será feito o fatorial: ");
+    float v1 = float.Parse(Console.ReadLine());
+
+    Console.WriteLine("");
+
+    fatorial = v1;
+    for (i = v1 - 1; i >= 1; i--)
+    {
+        Console.WriteLine($"{fatorial} * {i}");
+
+        fatorial = fatorial * i;
+
+    }
+
+    Console.WriteLine($"O resultado do fatorial é: {fatorial} ");
+    Console.ReadKey();
+    Menu();
 }
 
