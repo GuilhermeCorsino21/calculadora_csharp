@@ -116,13 +116,25 @@ static void Fatorial()
     Console.WriteLine("");
 
     fatorial = v1;
-    for (i = v1 - 1; i >= 1; i--)
+
+    if (v1 == 0)
     {
-        Console.WriteLine($"{fatorial} * {i}");
 
-        fatorial = fatorial * i;
-
+        fatorial = 1;
     }
+    else
+    {
+        for (i = v1 - 1; i >= 1; i--)
+        {
+
+            Console.WriteLine($"{fatorial} * {i}");
+
+            fatorial = fatorial * i;
+
+        }
+    }
+
+
 
     Console.WriteLine($"O resultado do fatorial é: {fatorial} ");
     Console.ReadKey();
